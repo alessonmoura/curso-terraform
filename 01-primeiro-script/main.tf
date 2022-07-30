@@ -1,17 +1,17 @@
-terraform{
+terraform {
   required_version = "1.2.6"
 
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "4.24.0"
     }
   }
 }
 
 provider "aws" {
-    region = "us-east-1"
-    profile = "terraform"
+  region  = "us-east-1"
+  profile = "terraform"
 }
 
 resource "aws_s3_bucket" "alesson-primeiro-script" {
@@ -20,7 +20,8 @@ resource "aws_s3_bucket" "alesson-primeiro-script" {
   tags = {
     Name        = "alesson-primeiro-script"
     Environment = "Dev"
-    Managedby = "Terraform"
+    Managedby   = "Terraform"
+    Owner       = "Alesson"
   }
 }
 
